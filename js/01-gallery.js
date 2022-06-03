@@ -19,7 +19,7 @@ const galleryContainer = document.querySelector('.gallery');
 const galleryMarkup = createGalleryItem(galleryItems);
 
 galleryContainer.insertAdjacentHTML('beforeend', galleryMarkup);
-galleryContainer.addEventListener('click', openModal);
+galleryContainer.addEventListener('click', onOpenModal);
 
 function createGalleryItem(items) {
     return items.map(({ preview, original, description }) => {
@@ -36,7 +36,7 @@ function createGalleryItem(items) {
     }).join('');
 }
 
-function openModal(e) {
+function onOpenModal(e) {
   e.preventDefault();
 
   if (!e.target.dataset.source) {
