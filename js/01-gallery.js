@@ -48,14 +48,14 @@ const instance = basicLightbox.create(`
       <img src="${e.target.dataset.source}" width="800" height="600">
 `)
   instance.show();
-  window.addEventListener('keydown', e => onEscKeyPress(e, instance));
-}
 
-function onEscKeyPress(e, instance) {
-  console.log('press');
+  window.addEventListener('keydown', onEscKeyPress);
+
+  function onEscKeyPress(e) {
   if (e.code === 'Escape') {
     console.log(e.code);
     instance.close(); 
-    window.removeEventListener('keydown', e => onEscKeyPress(e, instance));
+    window.removeEventListener('keydown', onEscKeyPress);
   }
+}
 }
