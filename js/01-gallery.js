@@ -42,7 +42,6 @@ function openModal(e) {
   if (!e.target.dataset.source) {
     return
   };
-  // console.log(e.target.dataset.source);
 
 const instance = basicLightbox.create(`
       <img src="${e.target.dataset.source}" width="800" height="600">
